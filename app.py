@@ -1,6 +1,8 @@
+import base64
 import os
 from datetime import datetime
 from html import escape
+from pathlib import Path
 
 import requests
 import streamlit as st
@@ -25,6 +27,8 @@ st.set_page_config(
 # Verify the permanent Supabase database once, after Streamlit has configured
 # the page and secrets.  A previous release ran this twice and used SQLite.
 init_db()
+
+LOGO_PATH = Path(__file__).resolve().parent / "assets" / "internnexus-logo.svg"
 
 
 # ============================================================
@@ -173,7 +177,11 @@ def apply_aesthetic_theme():
         .quote-copy { color:#535254; font-family:Georgia,serif; font-size:.9rem; line-height:1.45; }
         .quote-source { margin-top:.35rem; color:#85877c; font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
         .forge-banner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.05rem 1.25rem; margin:0 0 1.2rem; border:1px solid #d8c5b3; border-radius:16px; background:linear-gradient(100deg,#fffdf9,#eee5d7); box-shadow:0 8px 18px rgba(68,67,69,.05); }
+        .sidebar-brand { margin:0 0 .9rem; }
+        .brand-logo { display:block; width:100%; max-width:220px; height:auto; }
+        .forge-banner-brand { display:flex; align-items:center; gap:.85rem; min-width:0; }
         .forge-banner strong { display:block; color:#444345; font-size:1rem; letter-spacing:-.015em; }.forge-banner span { color:#74746e; font-size:.82rem; }.forge-badge { background:#d3b67f; color:#49453f!important; border-radius:999px; padding:.28rem .58rem; white-space:nowrap; font-size:.68rem!important; font-weight:800; letter-spacing:.06em; }
+        @media (max-width: 700px) { .forge-banner { flex-wrap:wrap; } .forge-banner .brand-logo { max-width:180px; } }
         /* Streamlit's theme preference and OS dark preference use the same warm palette. */
         @media (prefers-color-scheme: dark) {
           :root { color-scheme:dark; }
@@ -196,6 +204,13 @@ def apply_aesthetic_theme():
         """,
         unsafe_allow_html=True,
     )
+
+
+@st.cache_data(show_spinner=False)
+def logo_data_uri():
+    if not LOGO_PATH.exists():
+        return ""
+    return "data:image/svg+xml;base64," + base64.b64encode(LOGO_PATH.read_bytes()).decode("ascii")
 
 
 def quote_carousel():
@@ -389,6 +404,7 @@ def main():
     # --------------------------------------------------------
 
     start_activity()
+    logo_uri = logo_data_uri()
 
 
     # --------------------------------------------------------
@@ -396,6 +412,11 @@ def main():
     # --------------------------------------------------------
 
     with st.sidebar:
+        if logo_uri:
+            st.markdown(
+                f'<div class="sidebar-brand"><img class="brand-logo" src="{logo_uri}" alt="InternNexus logo"></div>',
+                unsafe_allow_html=True,
+            )
 
         st.success(
             f"Logged in as "
@@ -440,8 +461,9 @@ def main():
 
         return
 
+    banner_logo = f'<img class="brand-logo" src="{logo_uri}" alt="InternNexus logo">' if logo_uri else ""
     st.markdown(
-        '<div class="forge-banner"><div><strong>InternNexus</strong><span>AI-Powered Intern Management Platform · Developed during my internship at HCLTech.</span></div><div class="forge-badge">HCLTECH INTERNSHIP</div></div>',
+        f'<div class="forge-banner"><div class="forge-banner-brand">{banner_logo}<div><strong>InternNexus</strong><span>AI-Powered Intern Management Platform · Developed during my internship at HCLTech.</span></div></div><div class="forge-badge">HCLTECH INTERNSHIP</div></div>',
         unsafe_allow_html=True,
     )
 
