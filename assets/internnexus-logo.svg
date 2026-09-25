@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-labelledby="title desc">
+  <title id="title">InternNexus logo</title>
+  <desc id="desc">InternNexus wordmark with a star-inspired geometric emblem.</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b2e24"/>
+      <stop offset="100%" stop-color="#8c9186"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="96" rx="18" fill="#fffdf9"/>
+  <g transform="translate(20 18)">
+    <rect x="0" y="0" width="60" height="60" rx="14" fill="url(#g)"/>
+    <path d="M30 10l5.5 14.5L50 30l-14.5 5.5L30 50l-5.5-14.5L10 30l14.5-5.5L30 10z" fill="#f4e4d1"/>
+  </g>
+  <text x="94" y="43" font-size="28" font-weight="700" fill="#444345" font-family="Inter, Segoe UI, Arial, sans-serif">InternNexus</text>
+  <text x="94" y="64" font-size="11.5" fill="#6b5146" font-family="Inter, Segoe UI, Arial, sans-serif">AI-Powered Intern Management Platform</text>
+</svg>
