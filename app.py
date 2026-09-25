@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+LOGO_PATH = os.path.join(os.path.dirname(__file__), "assets", "internnexus-logo.png")
+
 from authentication import login_page, signup_page, logout
 from database.connection import init_db, get_connection
 from database.admin import request_deletion
@@ -19,11 +21,9 @@ from dashboards.admin.dashboard import render_admin_dashboard
 
 st.set_page_config(
     page_title="InternNexus",
-    page_icon="✦",
+    page_icon=LOGO_PATH,
     layout="wide"
 )
-
-LOGO_PATH = os.path.join(os.path.dirname(__file__), "assets", "internnexus-logo.png")
 
 if "show_splash" not in st.session_state:
     st.session_state.show_splash = True
