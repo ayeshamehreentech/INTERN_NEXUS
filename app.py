@@ -1,4 +1,5 @@
 import os
+import time
 from datetime import datetime
 from html import escape
 
@@ -21,6 +22,41 @@ st.set_page_config(
     page_icon="✦",
     layout="wide"
 )
+
+LOGO_PATH = os.path.join(os.path.dirname(__file__), "assets", "internnexus-logo.png")
+
+if "show_splash" not in st.session_state:
+    st.session_state.show_splash = True
+
+if st.session_state.show_splash:
+    st.markdown(
+        """
+        <style>
+        [data-testid="stAppViewContainer"] { background: #c7a77f; }
+        [data-testid="stHeader"] { background: transparent; }
+        [data-testid="stMainBlockContainer"] {
+            max-width: 100%;
+            padding: 0;
+        }
+        .stApp {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6f3422 0%, #c7a77f 52%, #fff0b4 100%);
+        }
+        [data-testid="stImage"] {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    splash_left, splash_content, splash_right = st.columns([1, 2, 1])
+    with splash_content:
+        st.image(LOGO_PATH, width=520)
+    with st.spinner("Loading InternNexus..."):
+        time.sleep(2.5)
+    st.session_state.show_splash = False
+    st.rerun()
 
 # Verify the permanent Supabase database once, after Streamlit has configured
 # the page and secrets.  A previous release ran this twice and used SQLite.
@@ -218,7 +254,11 @@ def quote_carousel():
 
 def auth_screen():
 
-    st.title("✦ InternNexus")
+    logo_col, title_col = st.columns([1, 5], vertical_alignment="center")
+    with logo_col:
+        st.image(LOGO_PATH, width=120)
+    with title_col:
+        st.title("InternNexus")
 
     st.caption(
         "AI-Powered Intern Management Platform · Developed during my internship at HCLTech."
@@ -440,10 +480,19 @@ def main():
 
         return
 
-    st.markdown(
-        '<div class="forge-banner"><div><strong>InternNexus</strong><span>AI-Powered Intern Management Platform · Developed during my internship at HCLTech.</span></div><div class="forge-badge">HCLTECH INTERNSHIP</div></div>',
-        unsafe_allow_html=True,
-    )
+    header_logo, header_copy, header_badge = st.columns([1, 5, 2], vertical_alignment="center")
+    with header_logo:
+        st.image(LOGO_PATH, width=82)
+    with header_copy:
+        st.markdown(
+            '<div class="forge-banner"><div><strong>InternNexus</strong><span>AI-Powered Intern Management Platform · Developed during my internship at HCLTech.</span></div></div>',
+            unsafe_allow_html=True,
+        )
+    with header_badge:
+        st.markdown(
+            '<div class="forge-badge">HCLTECH INTERNSHIP</div>',
+            unsafe_allow_html=True,
+        )
 
 
     # --------------------------------------------------------
