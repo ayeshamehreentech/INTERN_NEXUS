@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "assets", "internnexus-logo.png")
+LOGO_SVG_PATH = Path(__file__).resolve().parent / "assets" / "internnexus-logo.svg"
 
 from authentication import login_page, signup_page, logout
 from database.connection import init_db, get_connection
@@ -63,8 +64,6 @@ if st.session_state.show_splash:
 # Verify the permanent Supabase database once, after Streamlit has configured
 # the page and secrets.  A previous release ran this twice and used SQLite.
 init_db()
-
-LOGO_PATH = Path(__file__).resolve().parent / "assets" / "internnexus-logo.svg"
 
 
 # ============================================================
@@ -244,9 +243,9 @@ def apply_aesthetic_theme():
 
 @st.cache_data(show_spinner=False)
 def logo_data_uri():
-    if not LOGO_PATH.exists():
+    if not LOGO_SVG_PATH.exists():
         return ""
-    return "data:image/svg+xml;base64," + base64.b64encode(LOGO_PATH.read_bytes()).decode("ascii")
+    return "data:image/svg+xml;base64," + base64.b64encode(LOGO_SVG_PATH.read_bytes()).decode("ascii")
 
 
 def quote_carousel():
@@ -501,16 +500,15 @@ def main():
 
         return
 
-<<<<<<< HEAD
-    banner_logo = f'<img class="brand-logo" src="{logo_uri}" alt="InternNexus logo">' if logo_uri else ""
-    st.markdown(
-        f'<div class="forge-banner"><div class="forge-banner-brand">{banner_logo}<div><strong>InternNexus</strong><span>AI-Powered Intern Management Platform · Developed during my internship at HCLTech.</span></div></div><div class="forge-badge">HCLTECH INTERNSHIP</div></div>',
-        unsafe_allow_html=True,
-    )
-=======
     header_logo, header_copy, header_badge = st.columns([1, 5, 2], vertical_alignment="center")
     with header_logo:
-        st.image(LOGO_PATH, width=82)
+        if logo_uri:
+            st.markdown(
+                f'<img class="brand-logo" src="{logo_uri}" alt="InternNexus logo">',
+                unsafe_allow_html=True,
+            )
+        else:
+            st.image(LOGO_PATH, width=82)
     with header_copy:
         st.markdown(
             '<div class="forge-banner"><div><strong>InternNexus</strong><span>AI-Powered Intern Management Platform · Developed during my internship at HCLTech.</span></div></div>',
@@ -521,7 +519,6 @@ def main():
             '<div class="forge-badge">HCLTECH INTERNSHIP</div>',
             unsafe_allow_html=True,
         )
->>>>>>> origin/main
 
 
     # --------------------------------------------------------
