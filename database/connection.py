@@ -1,6 +1,7 @@
 """Supabase Data API adapter for the HCL Intern Nexus portal."""
 import os
 import re
+from urllib.parse import urlparse
 from supabase import create_client
 
 TABLES = {"users", "activity", "meetings", "meeting_transcriptions", "notices", "resources", "resource_history", "user_resources", "private_messages", "coding_lab_attempts", "learning_plans", "learning_checklist", "formulas", "student_reports", "deletion_requests"}
@@ -19,7 +20,12 @@ def _secret(name):
 
 
 def _client():
-    url = _secret("SUPABASE_URL") or "https://bmfpzfrzrvbkcmlvopoo.supabase.co"
+    url = (_secret("SUPABASE_URL") or "").strip().rstrip("/")
+    if not url:
+        raise RuntimeError("SUPABASE_URL is missing. Add the current Supabase Project URL to Streamlit secrets.")
+    parsed_url = urlparse(url)
+    if parsed_url.scheme != "https" or not parsed_url.netloc:
+        raise RuntimeError("SUPABASE_URL must be the HTTPS Project URL copied from Supabase.")
     key = _secret("SUPABASE_SECRET_KEY")
     if not key:
         raise RuntimeError("Supabase is not configured. Add SUPABASE_SECRET_KEY to Streamlit secrets.")
@@ -196,8 +202,11 @@ def init_db():
     """Verify the required Supabase table without creating local SQLite data."""
     try:
         _client().table("users").select("id").limit(1).execute()
+    except RuntimeError:
+        raise
     except Exception as error:
         raise RuntimeError(
-            "Supabase is unavailable. Check SUPABASE_URL, SUPABASE_SECRET_KEY, "
-            "and run database/schema.sql in the Supabase SQL Editor."
+            "Supabase could not be reached. In Streamlit Cloud, update SUPABASE_URL "
+            "with the current Supabase Project URL, verify SUPABASE_SECRET_KEY, "
+            "and confirm the project is active. Then run database/schema.sql if needed."
         ) from error
