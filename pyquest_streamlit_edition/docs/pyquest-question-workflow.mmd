@@ -1,0 +1,93 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	load_learner_state(load_learner_state)
+	planner(planner)
+	supervisor(supervisor)
+	curriculum(curriculum)
+	performance(performance)
+	adaptive(adaptive)
+	remediation(remediation)
+	question_generator(question_generator)
+	question_guard(question_guard)
+	novelty_guard(novelty_guard)
+	persist_quest(persist_quest)
+	generation_unavailable(generation_unavailable)
+	W01(W01)
+	W02(W02)
+	W03(W03)
+	W04(W04)
+	W05(W05)
+	W06(W06)
+	W07(W07)
+	W08(W08)
+	W09(W09)
+	W10(W10)
+	W11(W11)
+	W12(W12)
+	W13(W13)
+	W14(W14)
+	__end__([<p>__end__</p>]):::last
+	W01 --> question_generator;
+	W02 --> question_generator;
+	W03 --> question_generator;
+	W04 --> question_generator;
+	W05 --> question_generator;
+	W06 --> question_generator;
+	W07 --> question_generator;
+	W08 --> question_generator;
+	W09 --> question_generator;
+	W10 --> question_generator;
+	W11 --> question_generator;
+	W12 --> question_generator;
+	W13 --> question_generator;
+	W14 --> question_generator;
+	__start__ --> load_learner_state;
+	adaptive -.-> W01;
+	adaptive -.-> W02;
+	adaptive -.-> W03;
+	adaptive -.-> W04;
+	adaptive -.-> W05;
+	adaptive -.-> W06;
+	adaptive -.-> W07;
+	adaptive -.-> W08;
+	adaptive -.-> W09;
+	adaptive -.-> W10;
+	adaptive -.-> W11;
+	adaptive -.-> W12;
+	adaptive -.-> W13;
+	adaptive -.-> W14;
+	adaptive -.-> remediation;
+	curriculum --> performance;
+	load_learner_state --> planner;
+	novelty_guard -. &nbsp;unavailable&nbsp; .-> generation_unavailable;
+	novelty_guard -. &nbsp;done&nbsp; .-> persist_quest;
+	novelty_guard -. &nbsp;retry&nbsp; .-> question_generator;
+	performance --> adaptive;
+	planner --> supervisor;
+	question_generator --> question_guard;
+	question_guard --> novelty_guard;
+	remediation -.-> W01;
+	remediation -.-> W02;
+	remediation -.-> W03;
+	remediation -.-> W04;
+	remediation -.-> W05;
+	remediation -.-> W06;
+	remediation -.-> W07;
+	remediation -.-> W08;
+	remediation -.-> W09;
+	remediation -.-> W10;
+	remediation -.-> W11;
+	remediation -.-> W12;
+	remediation -.-> W13;
+	remediation -.-> W14;
+	supervisor --> curriculum;
+	generation_unavailable --> __end__;
+	persist_quest --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

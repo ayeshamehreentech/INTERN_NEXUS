@@ -1,0 +1,15 @@
+flowchart TD
+ A[Check Answer] --> B[Validate learner session and question ID]
+ B --> C[ExecutionRouter]
+ C --> D[Beginner: bounded AST executor]
+ C --> E[Advanced: Docker sandbox]
+ D --> F{Infrastructure failure?}
+ E --> F
+ F -->|Yes| G[Return environment error without rewards]
+ F -->|No| H[Compare actual outputs with test fixtures]
+ H --> I[Verify required Python concepts]
+ I --> J[Determine correctness]
+ J --> K[Deduplicate attempts and rewards]
+ K --> L[Calculate feedback, score and mastery]
+ L --> M[Persist attempt and eligible rewards]
+ M --> N[Show feedback and companion reaction]

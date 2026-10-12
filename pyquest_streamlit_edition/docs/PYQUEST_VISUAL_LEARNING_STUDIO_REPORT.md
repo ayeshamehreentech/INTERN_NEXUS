@@ -1,3 +1,5 @@
+> Historical report: the unused video-generation modules, cache implementation and reconciliation tooling were deleted on 2026-10-12. Current Visual Learning Studio uses deterministic diagrams.
+
 # PYQUEST VISUAL LEARNING STUDIO REPORT
 
 Verified 9 October 2026 in `C:\Users\mdabd\Desktop\pyquest_streamlit_edition`.

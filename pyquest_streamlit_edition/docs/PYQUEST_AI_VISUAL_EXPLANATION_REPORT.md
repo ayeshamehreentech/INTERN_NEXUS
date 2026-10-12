@@ -1,3 +1,5 @@
+> Historical report: the unused video-generation modules, cache implementation and reconciliation tooling were deleted on 2026-10-12. Current Visual Learning Studio uses deterministic diagrams.
+
 # PYQUEST AI VISUAL EXPLANATION REPORT
 
 **Retired on 11 October 2026 at the user's request.** AI image generation, its question form, provider controls, production image cache, adapters, dedicated tooling and Vault entry points have been removed. The studio now provides curated interactive diagrams only. Character artwork, concept cards, coding, Groq challenge generation and rewards remain intact. The implementation records below are historical. Removal QA: four native page tests and all 79 frontend tests passed; actual desktop/mobile browser checks passed all eight diagrams, draft preservation, navigation and unchanged rewards.
