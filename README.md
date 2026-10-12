@@ -11,10 +11,9 @@ All shared portal data is stored in **Supabase PostgreSQL** through the Supabase
 - Mentor meeting scheduling and recurring Tuesday/Thursday meetings
 - In-app YouTube learning: search, playlist loading, filtered regular tutorials, horizontal carousel, embedded `youtube-nocookie` player, saved items and completion state
 - Mentor resources are visible in the student's **Mentor Suggested** section
-- Python Quest Coding Lab: an interactive HTML/CSS/JavaScript Home/Map/Levels mini-game, staged scenario worlds, learn-before-code lessons, attempts, completion progress, and coins earned after verified answers
+- Python Quest Coding Lab: a launcher for the standalone `pyquest_streamlit_edition/` app, with LangGraph question generation, deterministic grading, checkpoints, secure execution, coins, drafts, and companions
 - Helping Bot with per-student permanent chat history, persona preferences, working memory and summary memory; a `＋` document upload control stores extracted text privately in Supabase for LangChain RAG over notices, mentor resources, and the student's own files
-- PyQuest uses a validated Python event registry: LangGraph/Python selects an allowlisted event, then the embedded JavaScript runs only predefined scene animations (never AI-generated browser code)
-- LangChain/LangGraph-oriented deep-agent utilities for Coding Lab and HCL content workflows, with safe fallbacks when an AI provider is unavailable
+- LangChain-oriented deep-agent utilities for HCL content workflows, with safe fallbacks when an AI provider is unavailable
 - Responsive brown/beige light and dark visual theme
 
 ## Architecture
@@ -46,19 +45,15 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    U[Student opens Coding Lab] --> O[PyQuest Coordinator]
-    O --> SA[Syllabus Architect]
-    SA --> ST[Storyteller Agent]
-    ST --> C[Student code attempt]
-    C --> SB[Restricted Sandbox]
-    SB --> EV[Evaluator and Reward Agent]
-    SB -->|blocked or failed| RC[Remediation and Practice Camp Agent]
-    EV --> VS[Validated Visual Sync events]
-    EV --> P[Supabase attempt and progress data]
-    RC --> ST
+    U[Student opens Coding Lab] --> L[PyQuest Streamlit Edition]
+    L --> O[LangGraph question workflow]
+    O --> C[Student code attempt]
+    C --> SB[Edition secure execution]
+    SB --> EV[Deterministic grading and rewards]
+    EV --> P[Edition progress, drafts, coins, checkpoints]
 ```
 
-The coordinator itself does not write to the database. It gives the UI a deterministic learning decision; the portal then persists verified attempts in Supabase. The restricted sandbox supports the early teaching subset and intentionally rejects imports, file access, networking, reflection, and unbounded code. For production hostile-code execution, use a separate container service with operating-system resource limits.
+The standalone edition owns its learner storage and checkpoints. The InternNexus dashboard preserves the HCL authentication session and launches the edition through `PYQUEST_APP_URL`; it does not copy or delete the existing Supabase learner records or historical attempts. The edition's local mode defaults to `http://127.0.0.1:8501/`; hosted InternNexus deployments must configure a public HTTPS PyQuest URL.
 
 ### Helping Bot private RAG flow
 
@@ -91,6 +86,8 @@ WEATHERMAP_API_KEY = "optional"
 MENTOR_EMAIL = "mentor@example.com"
 TEAMS_MEETING_LINK = "https://teams.microsoft.com/..."
 INTERNSHIP_TITLE = "Gen AI Internship"
+PYQUEST_DEPLOYMENT = "cloud"
+PYQUEST_APP_URL = "https://your-pyquest-app.streamlit.app/"
 ```
 
 Never commit secrets, database passwords, or API keys. Rotate any value that has been displayed in a chat, image, terminal log, or commit history.
@@ -115,13 +112,14 @@ Add the required variables to `.streamlit/secrets.toml` locally. Do not add that
 3. Add the secrets listed above in **App settings → Secrets**.
 4. Reboot the app after changing secrets or schema.
 5. If Supabase reports a missing table or column, re-run both schema files in the SQL Editor.
+6. For the student Coding Lab, configure `PYQUEST_DEPLOYMENT = "cloud"` and set `PYQUEST_APP_URL` to the public PyQuest Streamlit URL. Local development may omit it and uses `http://127.0.0.1:8501/`.
 
 ## Validation checklist
 
 - Create a student account and confirm it remains available after a reboot.
 - Create a notice, resource, doubt, and meeting as mentor; verify the student sees each item.
 - Search a video topic and play a result inside the Resources tab.
-- Complete a Python Quest task and verify progress/coin state updates.
+- Open the configured PyQuest app and verify concept, challenge, grading, draft, checkpoint, and coin flows.
 - Send a Helping Bot message, reload the application, and confirm history remains.
 - Upload a private study document through the Helping Bot `＋` control; ask a question about it and confirm the retrieved source is shown.
 
