@@ -1,0 +1,15 @@
+{
+  "question": "Explain how the integer 13 is represented in eight binary bits, with a beginner example.",
+  "status": "failed",
+  "message": "Cloudflare rejected inference authorization. Check the server token and its inference-provider permissions. Your explanation is saved.",
+  "model": "@cf/black-forest-labs/flux-1-schnell",
+  "provider": "cloudflare",
+  "groq_calls": 1,
+  "image_calls": 1,
+  "groq_error": null,
+  "image_error": {
+    "category": "HTTPStatusError",
+    "http_status": 401
+  },
+  "image_path": null
+}

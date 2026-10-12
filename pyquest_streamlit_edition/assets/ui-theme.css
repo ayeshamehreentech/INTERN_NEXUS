@@ -1,0 +1,76 @@
+/* Warm beige surfaces with explicit high-contrast text/background pairs. */
+.pyquest-root,.pyquest-root.studio-page {
+  background:#f3ebdf!important;
+  color:#332a24!important;
+}
+.studio-page::before{display:none;}
+.pyquest-root main{--companion-accent:#825d46!important;}
+.pyquest-root header{background:#fffcf7!important;color:#332a24!important;border-color:#dbcbb8!important;box-shadow:0 4px 16px #61432b0c;}
+.pyquest-root a,.studio-page header a,.studio-page .brand span{color:#765037;}
+.pyquest-root nav a.active{background:#eee1d0!important;color:#583922!important;}
+.pyquest-root #wallet,.free-badge{background:#eee1d0!important;color:#583922!important;border-color:#dbcbb8;}
+.pyquest-root .panel,.pyquest-root .card,.studio-panel,.resource-sidebar,.resource-reader,.resource-card,.studio-benefits article {
+  background:#fffcf7!important;color:#332a24!important;border-color:#dbcbb8!important;box-shadow:0 5px 20px #61432b0b;
+}
+.pyquest-root button,.save-companion,.resource-reader>a {
+  background:#825d46!important;color:#fffaf4!important;border-color:#825d46!important;
+}
+.pyquest-root button:hover{background:#684832!important;}
+.studio-page .companion-card{background:#f4eadc!important;color:#332a24!important;}
+.studio-page .companion-card[aria-pressed=true]{border-color:#825d46!important;box-shadow:0 0 0 2px #ead4bd;}
+.studio-page .pose-grid button,.studio-page .outfit-card{background:transparent!important;color:#332a24!important;}
+.studio-page .pose-grid svg.expression-portrait{background:#f0e3d2!important;}
+.stage-heading h2,.stage-heading p,.studio-title .eyebrow,.studio-page #active-label,.studio-page #studio-status,.resource-eyebrow,.resource-note,.resource-navigation span{color:#583922!important;text-shadow:none;}
+.studio-page .speech-bubble{background:#fffcf7!important;color:#332a24!important;}
+.glowing-platform{background:radial-gradient(ellipse,#fffcf7,#e7d5bf)!important;box-shadow:0 0 12px #ead4bd,inset 0 0 18px #f4eadc,0 10px 0 #d4bfa6,0 17px 24px #61432b15;}
+.pyquest-root .terminal{background:#eee2d2!important;color:#332a24!important;border:1px solid #dbcbb8;}
+.pyquest-root textarea,.pyquest-root pre{background:#fffaf2!important;color:#332a24!important;border:1px solid #dbcbb8!important;}
+.pyquest-root code,.pyquest-root samp{background:#eee2d2!important;color:#332a24!important;}
+.pyquest-root pre code,.pyquest-root pre samp{background:transparent!important;color:#332a24!important;}
+.pyquest-root table,.pyquest-root th,.pyquest-root td,.resource-concept,.resource-tip,.resource-group{background:#f5ecdf!important;color:#332a24!important;border-color:#dbcbb8!important;}
+.pyquest-root input:not([type=range]):not([type=checkbox]){background:#fffaf2;color:#332a24;border:1px solid #dbcbb8;}
+.pyquest-root progress,.pyquest-root input[type=range]{accent-color:#825d46;}
+.split>section:only-child{grid-column:1/-1;}
+.concept-back{display:inline-block;margin:8px 0 18px;color:#684b36;}
+.concept-card .eyebrow{color:#825d46!important;}
+.output-label{text-transform:uppercase;}
+.concept-card{max-width:1100px;margin:0 auto;padding:0!important;overflow:hidden;box-shadow:0 16px 48px #684b3610!important;}
+.concept-hero{padding:34px 38px 26px;background:linear-gradient(120deg,#fffaf2,#efe0cd);border-bottom:1px solid #dbcbb8;}
+.concept-hero h1{font-size:clamp(28px,4vw,44px);line-height:1.2;margin:10px 0;letter-spacing:-1px;}
+.concept-hero>p:last-of-type{max-width:65ch;font-size:16px;line-height:1.7;}
+.concept-path{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;}
+.concept-path span{border:1px solid #ccb79e;border-radius:100px;padding:7px 13px;font-size:12px;color:#684b36;background:#fffcf780;}
+.concept-columns{padding:30px 38px;gap:32px!important;align-items:start;}
+.concept-columns>section{min-width:0;}
+.concept-card h2{font-size:20px;line-height:1.4;margin-top:0;}
+.concept-card h3{font-size:15px;line-height:1.5;}
+.concept-card p,.concept-card li{line-height:1.75;font-size:14px;}
+.concept-purpose{padding:12px 18px;border-left:3px solid #a38160;background:#f6eddf;margin:20px 0 26px;border-radius:0 12px 12px 0;}
+.concept-purpose h3,.concept-predict h3{margin:0 0 6px;}
+.concept-purpose p,.concept-predict p{margin:0;}
+.reference-note{font-size:12px!important;color:#716052!important;}
+.example-window{border:1px solid #d5c2a9;border-radius:14px;overflow:hidden;margin:14px 0 20px;background:#fffaf2;}
+.example-bar{display:flex;justify-content:space-between;padding:11px 16px;background:#eaddca;color:#684b36;font-size:11px;letter-spacing:2px;}
+.example-window pre{border:0!important;border-radius:0!important;margin:0!important;padding:18px!important;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;font-size:13px;}
+.output-label{padding:10px 18px 0;border-top:1px solid #dbcbb8;font-size:10px;letter-spacing:1.5px;color:#716052;background:#f2eadc;}
+.example-window .expected-output{background:#f2eadc!important;}
+.line-guide summary,.toolkit-explainer summary{cursor:pointer;font-weight:600;line-height:1.6;}
+.line-guide li{padding:5px 0 5px 5px;}
+.concept-explore{background:#f8f1e7;border:1px solid #e6d7c4;border-radius:18px;padding:22px;}
+.concept-explore #concept-visual{margin:20px 0;padding:16px;background:#fffcf7;border-radius:12px;border:1px solid #e6d7c4;}
+.concept-explore output{display:block;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:14px;line-height:1.7;}
+.concept-mistakes{padding-top:12px;border-top:1px solid #dfcbb2;}
+.concept-predict{padding:16px;background:#e9ddca;border-radius:12px;margin-top:20px;}
+.toolkit-explainer{margin:0 38px 26px;padding:20px 22px;border:1px solid #d5c2a9;border-radius:16px;background:#fffaf2;}
+.toolkit-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;}
+.toolkit-terms p{padding:12px;background:#f2eadc;border-radius:10px;margin:0;}
+.toolkit-terms b{display:block;color:#684b36;}
+#toolkit-video-player video{display:block;width:100%;aspect-ratio:16/9;background:#f3ebdf;border-radius:12px;margin-top:18px;}
+.concept-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 38px;border-top:1px solid #dbcbb8;background:#f6eddf;}
+.concept-footer .actions{margin:0;}
+.concept-footer p{margin:0;color:#684b36;}
+.concept-footer button{white-space:nowrap;border-radius:12px;padding:12px 22px;}
+@media(max-width:700px){.concept-hero{padding:24px 20px;}.concept-columns{padding:22px 20px;grid-template-columns:1fr!important;gap:20px!important;}.toolkit-explainer{margin:0 20px 22px;padding:16px;}.toolkit-terms{grid-template-columns:1fr;}.concept-footer{padding:20px;flex-direction:column;align-items:stretch;}.concept-footer .actions,.concept-footer button{width:100%;}.concept-explore{padding:18px;}}
+
+.pyquest-root #active-companion,.pyquest-root .speech-bubble{background:#fffcf7!important;color:#332a24!important;border-color:#dbcbb8!important;}
+.pyquest-root .selection-check{background:#eee1d0!important;color:#583922!important;}

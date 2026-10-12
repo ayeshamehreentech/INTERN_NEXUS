@@ -1,0 +1,9 @@
+{
+  "errors": [],
+  "kaiSelected": true,
+  "staticFallback": true,
+  "reducedMotion": true,
+  "reducedClass": true,
+  "noConfetti": true,
+  "refreshNoReplay": true
+}

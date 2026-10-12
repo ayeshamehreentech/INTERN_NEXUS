@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:14.000
+MODULE: A module groups related Python code. Often it is a .py file; built-in and extension modules also exist.
+
+00:00:14.000 --> 00:00:28.000
+PACKAGE: A package is a module that can contain submodules. A regular package usually has __init__.py; namespace packages can omit it.
+
+00:00:28.000 --> 00:00:42.000
+LIBRARY: A library is reusable code, often made of modules and packages. lib is a common abbreviation, not a special Python keyword.
+
+00:00:42.000 --> 00:00:56.000
+FRAMEWORK: A framework supplies an application structure and runs parts of the workflow. Your code fits into that structure, for example Django views.
+
+00:00:56.000 --> 00:01:10.000
+CONNECT THE IDEAS: Modules and packages describe code organization. Libraries and frameworks describe how reusable code is used. These labels can overlap.

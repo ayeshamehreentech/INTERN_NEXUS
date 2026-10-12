@@ -1,0 +1,18 @@
+{
+  "provider": "isolated mock challenges",
+  "errors": [],
+  "initialPartial": true,
+  "revealThinking": true,
+  "fullText": true,
+  "readyIdle": true,
+  "writingIdle": true,
+  "checkThinking": true,
+  "wrongAnswerReaction": true,
+  "sadFeedbackCue": true,
+  "editingResetsReaction": true,
+  "correctCelebration": true,
+  "nextRevealThinking": true,
+  "nextPartial": true,
+  "editingCompletesReveal": true,
+  "draftPreserved": true
+}

@@ -1,0 +1,19 @@
+/* Presentation only: native widgets retain their labels and behavior. */
+[data-testid="stAppViewContainer"] {
+  background: #f3ebdf;
+}
+[data-testid="stMainBlockContainer"] { max-width: 1440px; }
+[data-testid="stVerticalBlockBorderWrapper"] {
+  border-radius: 16px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 4px 18px rgba(97,67,43,.04);
+}
+[data-testid="stImage"] img { border-radius: 12px; }
+[data-testid="stButton"] button { border-radius: 10px; min-height: 42px; }
+[data-testid="stTextArea"] textarea {
+  font-family: Consolas, 'Courier New', monospace; font-size: 14px;
+}
+.pyquest-world-label { color: #825d46; letter-spacing: .12em; font-size: .75rem; }
+@media (max-width: 600px) {
+  [data-testid="stMainBlockContainer"] { padding-inline: 1rem; }
+}

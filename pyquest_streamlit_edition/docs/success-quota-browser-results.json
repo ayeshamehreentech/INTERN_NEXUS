@@ -1,0 +1,12 @@
+{
+  "provider": "isolated mock",
+  "errors": [],
+  "generated": true,
+  "authoritativeCorrectModal": true,
+  "rewards": "✦ +100 XP\n🪙 +2 Coins",
+  "nextGenerated": false,
+  "nextBlocker": "Groq temporarily limited question requests. Your current challenge and code are preserved.",
+  "completedCodePreserved": true,
+  "providerFailure": "simulated quota error, not a live provider failure",
+  "noReplay": true
+}

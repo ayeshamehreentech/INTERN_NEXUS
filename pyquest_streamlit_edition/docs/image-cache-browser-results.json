@@ -1,0 +1,12 @@
+{
+  "fixture": "Explicitly labelled mock; not FLUX output",
+  "errors": [],
+  "cachedResult": true,
+  "cacheHitMessage": true,
+  "zoom": true,
+  "download": true,
+  "mobileFits": true,
+  "followupPrefill": true,
+  "vaultPrefill": true,
+  "noAutomaticGeneration": true
+}

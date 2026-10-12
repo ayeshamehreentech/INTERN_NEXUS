@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+*.env
+.streamlit/secrets.toml
+data/
+*.db
+*.db-*
+*.sqlite*
+*.log
+qa-artifacts/
+.pytest_cache/
+.ui-build/
+static/assets/
+generated_visuals/

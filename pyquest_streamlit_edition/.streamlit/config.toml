@@ -1,0 +1,23 @@
+[server]
+port = 8501
+headless = true
+enableCORS = true
+enableXsrfProtection = true
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#825d46"
+backgroundColor = "#f3ebdf"
+secondaryBackgroundColor = "#eee1d0"
+textColor = "#332a24"
+font = "sans-serif"
+borderColor = "#dbcbb8"
+showWidgetBorder = true
+baseRadius = "0.75rem"
+
+[theme.sidebar]
+backgroundColor = "#eee1d0"

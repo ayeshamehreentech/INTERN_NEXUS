@@ -1,0 +1,12 @@
+{
+  "provider": "isolated mock question provider",
+  "errors": [],
+  "naturalBlink": true,
+  "returnedIdle": true,
+  "syntaxMotivation": true,
+  "runHappy": true,
+  "runMessage": "Your code ran successfully. Check Answer will verify the challenge requirements.",
+  "noRunModal": true,
+  "successModalPreserved": true,
+  "draftPreserved": true
+}

@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "characters": {
+    "kai": {
+      "source": "assets/characters/animination/kai/kai.png",
+      "outfit": "outfit_01",
+      "states": {
+        "idle": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": true,
+          "fallback": "idle"
+        },
+        "blink": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/kai/blink/01.png",
+            "/assets/characters/animated/kai/blink/02.png",
+            "/assets/characters/animated/kai/blink/03.png",
+            "/assets/characters/animated/kai/blink/04.png"
+          ],
+          "fps": 20,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "thinking": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/kai/thinking/01.png",
+            "/assets/characters/animated/kai/thinking/02.png",
+            "/assets/characters/animated/kai/thinking/03.png",
+            "/assets/characters/animated/kai/thinking/04.png"
+          ],
+          "fps": 2,
+          "loop": true,
+          "fallback": "idle"
+        },
+        "happy": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/kai/happy/01.png",
+            "/assets/characters/animated/kai/happy/02.png",
+            "/assets/characters/animated/kai/happy/03.png",
+            "/assets/characters/animated/kai/happy/04.png"
+          ],
+          "fps": 3,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "motivating": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/kai/motivating/01.png",
+            "/assets/characters/animated/kai/motivating/02.png",
+            "/assets/characters/animated/kai/motivating/03.png",
+            "/assets/characters/animated/kai/motivating/04.png"
+          ],
+          "fps": 3,
+          "loop": false,
+          "fallback": "idle"
+        }
+      }
+    },
+    "nova": {
+      "source": "assets/characters/animination/nova/nova.png",
+      "outfit": "outfit_01",
+      "states": {
+        "idle": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/nova/idle/01.png"
+          ],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "blink": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "thinking": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": true,
+          "fallback": "idle"
+        },
+        "happy": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "motivating": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        }
+      }
+    },
+    "mira": {
+      "source": "assets/characters/animination/mira/mira.png",
+      "outfit": "outfit_01",
+      "states": {
+        "idle": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/mira/idle/01.png"
+          ],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "blink": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "thinking": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": true,
+          "fallback": "idle"
+        },
+        "happy": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "motivating": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        }
+      }
+    },
+    "byte": {
+      "source": "assets/characters/animination/byte/byte.png",
+      "outfit": "outfit_01",
+      "states": {
+        "idle": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/byte/idle/01.png"
+          ],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "blink": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/byte/blink/01.png",
+            "/assets/characters/animated/byte/blink/02.png"
+          ],
+          "fps": 10,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "thinking": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/byte/thinking/01.png",
+            "/assets/characters/animated/byte/thinking/02.png"
+          ],
+          "fps": 2,
+          "loop": true,
+          "fallback": "idle"
+        },
+        "happy": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/byte/happy/01.png",
+            "/assets/characters/animated/byte/happy/02.png"
+          ],
+          "fps": 2,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "motivating": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/byte/motivating/01.png",
+            "/assets/characters/animated/byte/motivating/02.png"
+          ],
+          "fps": 2,
+          "loop": false,
+          "fallback": "idle"
+        }
+      }
+    },
+    "zed": {
+      "source": "assets/characters/animination/zed/zed.png",
+      "outfit": "outfit_01",
+      "states": {
+        "idle": {
+          "status": "READY",
+          "frames": [
+            "/assets/characters/animated/zed/idle/01.png"
+          ],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "blink": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "thinking": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": true,
+          "fallback": "idle"
+        },
+        "happy": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        },
+        "motivating": {
+          "status": "SOURCE_REQUIRES_CLEAN_ASSET",
+          "frames": [],
+          "fps": null,
+          "loop": false,
+          "fallback": "idle"
+        }
+      }
+    }
+  }
+}

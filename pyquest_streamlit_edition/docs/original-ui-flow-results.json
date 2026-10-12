@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "run": true,
+  "check": true,
+  "rewards": true,
+  "reviewPreservesCode": true,
+  "emptyDraftPreserved": true,
+  "next": true,
+  "mobileOverflow": false
+}

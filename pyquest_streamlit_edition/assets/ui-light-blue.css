@@ -1,0 +1,29 @@
+/* One light-blue presentation theme across the original renderer. */
+.pyquest-root,.pyquest-root.studio-page {
+  background:linear-gradient(130deg,#dff5ff,#eff7ff)!important;
+  color:#102a56!important;
+  --companion-accent:#2459b8!important;
+}
+.studio-page::before { display:none; }
+.pyquest-root header,.studio-page header {
+  background:#fff!important;color:#102a56!important;
+  border-bottom:1px solid #bed9f4;box-shadow:0 4px 16px #2460a010;
+}
+.studio-page header a,.studio-page .brand span { color:#114bb3; }
+.studio-page nav a.active { background:#e1efff;color:#114bb3; }
+.studio-page #wallet { background:#e5f1ff;color:#114bb3; }
+.studio-panel { background:linear-gradient(145deg,#fff,#f0f7ff);border-color:#bed9f4;box-shadow:0 5px 18px #2460a010; }
+.studio-title .eyebrow,.studio-page #active-label,.studio-page #studio-status { color:#2459b8; }
+.free-badge { background:#e5f1ff;border-color:#bed9f4;color:#153f70; }
+.stage-heading h2 { color:#2459b8;text-shadow:none; }
+.stage-heading p { color:#476283; }
+.studio-page .companion-card { background:linear-gradient(110deg,#d9edff,#f8fbff);color:#102a56;box-shadow:inset 0 1px 2px #fff; }
+.studio-page .companion-card[aria-pressed=true] { border-color:#2459b8;box-shadow:0 0 0 2px #c9e3ff; }
+.glowing-platform { background:radial-gradient(ellipse,#f7fbff,#cfe5fc);box-shadow:0 0 12px #b5d9fc,inset 0 0 18px #d4eaff,0 10px 0 #b8d4ef,0 17px 24px #2460a020; }
+.studio-page .speech-bubble { background:#fff;color:#153f70; }
+.save-companion { background:linear-gradient(#387be4,#2459b8)!important;color:#fff!important;border-color:#b8d9ff!important;box-shadow:0 4px 0 #194483,0 7px 20px #2459b822; }
+.studio-benefits article { box-shadow:0 5px 18px #2460a010;border-color:#bed9f4; }
+.pyquest-root .terminal { background:#e5f1ff;color:#102a56;border:1px solid #bed9f4; }
+.pyquest-root textarea,.pyquest-root pre { background:#f7fbff;color:#153f70;border:1px solid #bed9f4; }
+.pyquest-root code { color:#153f70; }
+.split>section:only-child { grid-column:1/-1; }

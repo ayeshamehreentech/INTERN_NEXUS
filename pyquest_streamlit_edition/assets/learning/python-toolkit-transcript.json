@@ -1,0 +1,37 @@
+[
+  {
+    "term": "MODULE",
+    "title": "One importable unit",
+    "explanation": "A module groups related Python code. Often it is a .py file; built-in and extension modules also exist.",
+    "example": "import greetings \u2192 greetings.hello(\"Ayesha\")",
+    "analogy": "Think: one useful recipe."
+  },
+  {
+    "term": "PACKAGE",
+    "title": "Organize related modules",
+    "explanation": "A package is a module that can contain submodules. A regular package usually has __init__.py; namespace packages can omit it.",
+    "example": "from kitchen import breakfast",
+    "analogy": "Think: a folder of related recipes."
+  },
+  {
+    "term": "LIBRARY",
+    "title": "Reusable tools for your program",
+    "explanation": "A library is reusable code, often made of modules and packages. lib is a common abbreviation, not a special Python keyword.",
+    "example": "import math     # from Python\u2019s standard library",
+    "analogy": "Think: a toolbox you choose tools from."
+  },
+  {
+    "term": "FRAMEWORK",
+    "title": "A structure for building an app",
+    "explanation": "A framework supplies an application structure and runs parts of the workflow. Your code fits into that structure, for example Django views.",
+    "example": "Framework calls your handler when a request arrives",
+    "analogy": "Think: a workshop with an established workflow."
+  },
+  {
+    "term": "CONNECT THE IDEAS",
+    "title": "Different labels, related roles",
+    "explanation": "Modules and packages describe code organization. Libraries and frameworks describe how reusable code is used. These labels can overlap.",
+    "example": "Install third-party tools with pip; import names in Python.",
+    "analogy": "Python includes its standard library. Django is installed separately."
+  }
+]

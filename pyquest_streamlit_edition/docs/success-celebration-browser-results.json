@@ -1,0 +1,21 @@
+{
+  "errors": [],
+  "provider": "isolated mock questions; real execution/grading/rewards",
+  "incorrectNoModal": true,
+  "runNoModal": true,
+  "correctModal": true,
+  "nativeModal": true,
+  "actualRewards": "✦ +75 XP\n🪙 +2 Coins",
+  "backgroundBlocked": true,
+  "focusTrapped": true,
+  "mobileFits": true,
+  "escapePreservesCode": true,
+  "repeatNoModal": true,
+  "repeatNoRewards": true,
+  "reviewPreservesCode": true,
+  "continueExactlyOnce": true,
+  "generationFailureType": "actual mock question guard rejection",
+  "generationFailureMessage": "A new challenge could not be prepared. Try again. No static question was substituted.",
+  "generationFailurePreservesCode": true,
+  "failureNoDuplicateModal": true
+}

@@ -1,0 +1,16 @@
+{
+  "provider": "isolated mock challenges",
+  "errors": [],
+  "headerRemoved": true,
+  "topXPRemoved": true,
+  "fastBlink": true,
+  "flyingCoins": 5,
+  "soundNotes": 5,
+  "audioRunning": true,
+  "musicOff": true,
+  "noRewardReplay": true,
+  "noSoundReplay": true,
+  "navigationWorks": true,
+  "draftPreserved": true,
+  "profilePreserved": true
+}

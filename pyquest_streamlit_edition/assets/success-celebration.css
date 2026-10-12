@@ -1,0 +1,30 @@
+.success-celebration{box-sizing:border-box;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;border:1px solid #e5dff5;border-radius:24px;padding:24px 28px 22px;background:linear-gradient(155deg,#fff,#fbf8ff);color:#282640;box-shadow:0 24px 90px #15132d66,0 0 42px #b4a7f533;text-align:center;animation:success-enter 300ms 150ms both;position:fixed;inset:0;margin:auto;}
+.success-celebration::backdrop{background:#12142699;backdrop-filter:blur(8px);animation:success-dim 150ms both;}
+.success-celebration .success-label{position:relative;font-size:11px;font-weight:700;letter-spacing:2px;color:#685598;margin:0 0 8px;}
+.success-celebration h2{position:relative;font-size:32px;line-height:1.2;margin:8px 0 12px;color:#514399;animation:success-pop 420ms 300ms both;}
+.success-celebration #success-message{position:relative;font-size:17px;font-weight:700;line-height:1.5;margin:0 0 8px;color:#282640;}
+.success-celebration .success-support{position:relative;font-size:13px;line-height:1.65;color:#656079;margin:0 0 18px;}
+.success-character{position:relative;height:180px;max-width:240px;margin:auto;animation:success-bounce 600ms 300ms both,success-sway 4s 1600ms ease-in-out infinite;}
+.success-character .character-figure{height:180px!important;width:100%!important;margin:auto;animation:none!important;transform:none!important;}
+.success-character .character-frame,.success-character svg{height:100%!important;width:100%!important;object-fit:contain;}
+.success-character .speech-bubble,.success-character .expression-inset{display:none;}
+.success-rewards{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:22px;animation:success-pop 350ms 650ms both;}
+.success-rewards span{padding:10px 18px;border:1px solid #e9cf8a;border-radius:14px;background:#fff5d6;color:#725014;font-size:15px;font-weight:700;}
+.success-repeat-note{font-size:12px;color:#656079;line-height:1.6;}
+.success-celebration button{position:relative;display:block;width:100%;min-height:44px;border-radius:12px;font-weight:600;font-size:14px;cursor:pointer;}
+.success-celebration .success-continue{background:linear-gradient(100deg,#576ec3,#7956b7)!important;color:white!important;border:1px solid #5e58a8;margin-bottom:8px;box-shadow:0 4px 16px #6960bc22;}
+.success-celebration .success-stay{background:transparent!important;color:#68617e!important;border:1px solid transparent;}
+.success-celebration button:focus-visible{outline:3px solid #ad8d36;outline-offset:3px;}
+.success-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:24px;}
+.success-confetti i{position:absolute;left:calc(7% + var(--particle)*4.9%);top:0;width:7px;height:11px;border-radius:2px;background:#b39ae6;opacity:0;animation:success-confetti 950ms calc(500ms + var(--particle)*15ms) ease-out both;}
+.success-confetti i:nth-child(3n){background:#efd179;}.success-confetti i:nth-child(3n+1){background:#8cb4e8;}
+@keyframes success-dim{from{background:transparent;backdrop-filter:blur(0);}to{background:#12142699;backdrop-filter:blur(8px);}}
+@keyframes success-enter{from{opacity:0;transform:scale(.9) translateY(14px);}to{opacity:1;transform:scale(1) translateY(0);}}
+@keyframes success-pop{from{opacity:0;transform:scale(.9);}to{opacity:1;transform:scale(1);}}
+@keyframes success-bounce{0%,100%{transform:translateY(0);}35%{transform:translateY(-14px) rotate(-3deg);}70%{transform:translateY(-5px) rotate(2deg);}}
+@keyframes success-sway{0%,100%{transform:translateY(0) rotate(-1deg);}50%{transform:translateY(-3px) rotate(1deg);}}
+@keyframes success-confetti{0%{opacity:0;transform:translateY(10px) rotate(0);}15%{opacity:.85;}100%{opacity:0;transform:translateY(290px) rotate(230deg);}}
+.success-celebration.celebration-reduced,.success-celebration.celebration-reduced *{animation:none!important;transition:none!important;}
+.success-celebration.celebration-reduced::backdrop{animation:none!important;}
+@media(prefers-reduced-motion:reduce){.success-celebration,.success-celebration *,.success-celebration::backdrop{animation:none!important;transition:none!important;}}
+@media(max-height:700px){.success-celebration{padding:18px 22px;}.success-character,.success-character .character-figure{height:125px!important;}.success-celebration h2{font-size:28px;}.success-celebration .success-support{margin-bottom:12px;}.success-rewards{margin-bottom:14px;}}

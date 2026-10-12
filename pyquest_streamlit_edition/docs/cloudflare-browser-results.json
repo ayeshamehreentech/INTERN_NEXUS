@@ -1,0 +1,10 @@
+{
+  "provider": "cloudflare",
+  "requestsSubmitted": 0,
+  "errors": [],
+  "providerSelected": true,
+  "savedAuthorizationError": true,
+  "explanationPreserved": true,
+  "noHuggingFaceChargeCheckbox": true,
+  "mobileFits": true
+}

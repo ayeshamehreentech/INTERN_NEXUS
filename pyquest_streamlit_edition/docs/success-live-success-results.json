@@ -1,0 +1,9 @@
+{
+  "note": "Earlier live browser result preserved from the observed tool output; the final retry is recorded separately in success-live-browser-results.json.",
+  "provider": "live Groq",
+  "errors": [],
+  "generated": true,
+  "authoritativeCorrectModal": true,
+  "rewards": "✦ +100 XP\n🪙 +2 Coins",
+  "nextGenerated": true
+}

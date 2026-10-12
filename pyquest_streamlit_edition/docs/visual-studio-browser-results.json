@@ -1,0 +1,32 @@
+{
+  "errors": [],
+  "provider": "HF token absent; isolated mock challenge provider",
+  "repeatedDifficulty": true,
+  "celebration": true,
+  "nativeVault": true,
+  "previousViewDisposed": true,
+  "search": true,
+  "revealExample": true,
+  "emptySearch": true,
+  "vaultMobileFits": true,
+  "nativeStudio": true,
+  "videoControlsRetired": true,
+  "imageControlsRemoved": true,
+  "diagrams": [
+    "Binary integer representation",
+    "Bitwise operators",
+    "Memory references",
+    "Stack and queue operations",
+    "Sorting algorithms",
+    "Binary search",
+    "Recursion",
+    "OOP concepts"
+  ],
+  "structures": true,
+  "objectsIndependent": true,
+  "studioMobileFits": true,
+  "draftPreserved": true,
+  "readingNoRewards": true,
+  "noModalReplay": true,
+  "noRewardReplay": true
+}

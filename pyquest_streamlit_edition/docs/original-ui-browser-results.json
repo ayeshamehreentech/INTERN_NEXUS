@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "home": true,
+  "staticFallback": true,
+  "charactersVerified": 5,
+  "saved": true,
+  "persistence": true,
+  "mobileOverflow": false,
+  "resources": true
+}
