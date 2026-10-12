@@ -10,3 +10,9 @@ __pycache__
 .pytest_cache
 .coverage
 .DS_Store
+**/.env
+**/secrets.toml
+**/data
+**/*.db-*
+**/*.sqlite*
+**/qa-artifacts
