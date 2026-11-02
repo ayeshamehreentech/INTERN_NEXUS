@@ -10,6 +10,11 @@ from edition.runtime import ROOT, call
 from app.question_generation_service import QuestionGenerationUnavailable
 
 
+def character_asset_paths(text):
+    """Keep character URLs relative to the app document, including Cloud's /~/+/ mount."""
+    return text.replace('/app/static/assets/characters/', './app/static/assets/characters/')
+
+
 @lru_cache(maxsize=1)
 def prepare_assets():
     source=ROOT/'assets';target=ROOT/'static/assets'
@@ -18,7 +23,7 @@ def prepare_assets():
             destination=target/path.relative_to(source)
             destination.parent.mkdir(parents=True,exist_ok=True)
             if path.name=='manifest.json':
-                destination.write_text(path.read_text().replace('/assets/','/app/static/assets/'))
+                destination.write_text(character_asset_paths(path.read_text().replace('/assets/','/app/static/assets/')))
             elif not destination.exists() or destination.stat().st_mtime<path.stat().st_mtime:
                 shutil.copy2(path,destination)
 
@@ -26,7 +31,7 @@ def prepare_assets():
 def asset_urls(value):
     if isinstance(value,dict):return {k:asset_urls(v) for k,v in value.items()}
     if isinstance(value,list):return [asset_urls(v) for v in value]
-    if isinstance(value,str) and value.startswith('/assets/'):return '/app/static'+value
+    if isinstance(value,str) and value.startswith('/assets/'):return character_asset_paths('/app/static'+value)
     return value
 
 
@@ -89,7 +94,7 @@ _CSS+='\n:host{display:block;width:100%;}.pyquest-root{min-height:100vh;}#notice
 _CSS+='\n.studio-page .pose-grid{gap:8px;}.studio-page .pose-grid svg.expression-portrait{height:72px;padding:4px;background:#f0e3d2;border-radius:12px;}.studio-page .pose-grid button{min-width:0;color:#583922;}.studio-page .pose-grid span{font-size:11px;margin-top:7px;}'
 _CSS+='\n'+(ROOT/'assets/ui-theme.css').read_text(encoding='utf-8')
 _CSS+='\n'+(ROOT/'assets/success-celebration.css').read_text(encoding='utf-8')
-_BUNDLE=(ROOT/'edition/ui/app.bundle.js').read_text(encoding='utf-8')
+_BUNDLE=character_asset_paths((ROOT/'edition/ui/app.bundle.js').read_text(encoding='utf-8'))
 _JS='''export default function(component) {
  const {parentElement,data,setTriggerValue}=component;
  const root=parentElement.querySelector('.pyquest-root');
